@@ -47,7 +47,8 @@ class ChatList extends React.Component {
         const { chats, chatsWithNewMessages } = this.props;
         const chatElements = Object.keys(chats).map(chatId => (
             <ListItem
-                // className={ chatsWithNewMessages.indexOf(Number(chatId)) >= 0 ? 'highlighted' : '' }
+                key={ chatId }
+
                 style={ chatsWithNewMessages.indexOf(Number(chatId)) >= 0 ? { backgroundColor: 'red' } : {}}
                 primaryText={ chats[chatId].title }
                 leftIcon={ <ContentSend /> }
